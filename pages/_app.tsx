@@ -16,10 +16,10 @@ export default function App({ Component, pageProps }: AppProps) {
       className={`${inter.variable} ${
         raleway.variable
       } flex min-h-screen flex-col items-center font-sans ${
-        router.pathname == "/" ? "py-16" : "pb-16 pt-32"
+        router.pathname == "/app" ? "py-16" : "pb-16 pt-32 md:pt-16"
       }`}
     >
-      {router.pathname !== "/" && <Navigation />}
+      {router.pathname !== "/app" && <Navigation />}
       <div className="mt-auto"></div>
       <Component {...pageProps} />
       <div className="mb-auto"></div>

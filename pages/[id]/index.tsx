@@ -57,7 +57,7 @@ export default function Track() {
       const avg = Math.round(
         Object.keys(count)
           .map(Number)
-          .reduce((acc, key) => acc + count[key] * key) / lock.codes.length
+          .reduce((acc, key) => acc + count[key] * key, 0) / lock.codes.length
       );
 
       average = `${average}${avg}`;

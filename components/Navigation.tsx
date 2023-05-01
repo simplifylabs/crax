@@ -9,12 +9,14 @@ export default function Navigation() {
   return (
     <div className="absolute inset-x-0 top-0 flex items-center justify-between p-6">
       <Link
-        href="/"
+        href={router.pathname == "/" ? "/" : "/app"}
         className="tracking-tighest font-raleway text-3xl font-extrabold text-foreground"
       >
         Crax
       </Link>
-      {router.pathname == "/[id]" ? (
+      {router.pathname == "/" ? (
+        <Button onClick={() => router.push(`/app`)}>Get Started</Button>
+      ) : router.pathname == "/[id]" ? (
         <Button onClick={() => router.push(`/${router.query.id}/track`)}>
           <Plus className="mr-2 h-4 w-4" />
           Track
